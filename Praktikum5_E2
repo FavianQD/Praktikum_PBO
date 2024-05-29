@@ -1,0 +1,42 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr  1 14:36:29 2024
+
+@author: Favian
+
+Favian Qintara Daffa - 064002100014
+
+"""
+class Film:
+    def __init__(self, film, year, director):
+        self.film = film
+        self.year = year
+        self.director = director
+
+    def person(self, name, id):
+        return f'Prak 5 ({name} - {id})\n-------------------ELKOM 2-------------------'
+
+
+# Membuat objek-objek film
+film1 = Film("Interstellar", 2013, 'Ucup')
+film2 = Film("Initial D", 1997,'wg brother')
+film3 = Film("Sponkboobs", 2015, 'Gaga Putra')
+film4 = Film("Jono", 2020, 'saipul jamilah')
+film5 = Film("Manusia makan kucing", 2022, 'james wan')
+
+# Membuat list of object film
+people_list = [film1, film2, film3, film4, film5]
+
+# Membuat objek film
+person = Film('', 0, '')
+
+# Memanggil metode person dengan parameter yang sesuai
+persons = person.person('nama', 'nim')
+print(persons.center(93))
+
+# Mengakses objek dalam list
+loops = 1
+for film in people_list:
+    print(f'Film favorit ke-{loops}:\nJudul: {film.film}\nRilis: {film.year}\nDirector: {film.director}\n________________')
+    loops += 1
+
