@@ -1,0 +1,37 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed May 29 23:13:42 2024
+
+@author: Favian
+
+Favian Qintara Daffa - 064002100014
+
+"""
+import datetime
+import pytz
+
+def my_decorator(inner):
+    def inner_decorator():
+        # Mendapatkan waktu UTC
+        utc_now = datetime.datetime.now(pytz.utc)
+        # Mengubah waktu UTC menjadi UTC+7
+        jakarta_tz = pytz.timezone('Asia/Jakarta')
+        jakarta_now = utc_now.astimezone(jakarta_tz)
+        print("\nTimezone: Asia/Jakarta")
+        print(f"Tanggal: {jakarta_now.strftime('%Y-%m-%d')}")
+        print(f"Waktu: {jakarta_now.strftime('%H:%M:%S.%f')}")
+        inner()
+        utc_now = datetime.datetime.now(pytz.utc)
+        jakarta_now = utc_now.astimezone(jakarta_tz)
+        print(f"Tanggal: {jakarta_now.strftime('%Y-%m-%d')}")
+        print(f"Waktu: {jakarta_now.strftime('%H:%M:%S.%f')}")
+
+    return inner_decorator
+
+@my_decorator
+def decorated():
+    print("\nBerubah Menjadi\n")
+
+if __name__ == "__main__":
+    print("\nNama: FAVIAN QINTARA DAFFA\nNim: 064002100014        \n_____________________________")
+    decorated()
