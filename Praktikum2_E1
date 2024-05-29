@@ -8,6 +8,7 @@ Favian Qintara Daffa - 064002100014
 
 """
 
+
 class Triangle:
     def __init__(self, name, nim):
         self.name = name
